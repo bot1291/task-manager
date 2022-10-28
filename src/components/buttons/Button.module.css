@@ -1,0 +1,42 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button {
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: teal;
+  font-size: 35px;
+  padding: 3px;
+}
+
+.button:hover {
+  background-color: rgb(226, 220, 220);
+}
+
+.removeComplitedButtonOff {
+  color: black;
+  background-color: rgb(226, 220, 220);
+}
+
+.allCompleteButtonOff {
+  color: black;
+  background-color: rgb(226, 220, 220);
+}
+
+.button:active {
+  background-color: #121211;
+  color: white;
+  transition: all 0.1s;
+}
+
+.allCompleteButtonOff:active,
+.removeComplitedButtonOff:active {
+  background-color: rgb(226, 220, 220);
+  color: black;
+  transition: all 0.1s;
+}

@@ -1,0 +1,79 @@
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 15px 0;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 2px solid #555;
+  color: black;
+  background-color: #fbfef9;
+}
+
+.todoComplited {
+  background-color: #727272;
+}
+
+.todoText {
+  width: 100%;
+  text-align: left;
+  margin: unset;
+  font-size: unset;
+  user-select: none;
+}
+
+.todoIconTable {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  color: teal;
+}
+
+.todoComplited .todoIconTable {
+  color: black;
+}
+
+.todoIcon {
+  font-size: 33px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.todoIcon:hover {
+  transform: scale(1.5);
+  transition: transform .2s;
+}
+
+.todoIconRemove {
+  font-size: 33px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todoIconRemove:hover {
+  color: rgb(148, 7, 7);
+}
+
+.todoIconComplited {
+  font-size: 33px;
+  cursor: pointer;
+}
+
+.todoIconComplited:hover {
+  color: teal;
+}
+
+.todoComplited .todoIconRemove:hover {
+  transform: unset;
+  transition: unset;
+  cursor: unset;
+}
+
+.todoComplited .todoIcon:hover {
+  color: unset;
+}
+
+.todoIconRemove:active,
+.todoIconComplited:active {
+  transform: scale(1);
+  transition: all .08s;
+}
