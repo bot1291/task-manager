@@ -47,11 +47,16 @@ function App() {
   }
 
   function setComplitedHandler(id) {
-    const newTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : { ...todo }
-    );
-    setTodos(newTodos);
-    setfilteredTodos(newTodos);
+    function setNewTodos(todosArray) {
+      const newTodos = todosArray.map((todo) =>
+        todo.id === id
+          ? { ...todo, isCompleted: !todo.isCompleted }
+          : { ...todo }
+      );
+      return newTodos;
+    }
+    setTodos(setNewTodos(todos));
+    setfilteredTodos(setNewTodos(filteredTodos));
   }
 
   function addTodoHandler(text) {
@@ -80,28 +85,37 @@ function App() {
   }
 
   function handleRemoveTodo(id) {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
-    setfilteredTodos(newTodos);
+    function setNewTodos(todosArray) {
+      const newTodos = todosArray.filter((todo) => todo.id !== id);
+      return newTodos;
+    }
+    setTodos(setNewTodos(todos));
+    setfilteredTodos(setNewTodos(filteredTodos));
   }
 
   function handleRemoveComplitedTodo() {
-    const newTodos = todos.filter((todo) => todo.isCompleted === false);
-    setTodos(newTodos);
-    setfilteredTodos(newTodos);
+    function setNewTodos(todosArray) {
+      const newTodos = todosArray.filter((todo) => todo.isCompleted === false);
+      return newTodos;
+    }
+    setTodos(setNewTodos(todos));
+    setfilteredTodos(setNewTodos(filteredTodos));
   }
 
   function allTodoCompleteHandler() {
-    const newTodos = todos.map(
-      (todo) => todo && { ...todo, isCompleted: true }
-    );
-    setTodos(newTodos);
-    setfilteredTodos(newTodos);
+    function setNewTodos(todosArray) {
+      const newTodos = todosArray.map(
+        (todo) => todo && { ...todo, isCompleted: true }
+      );
+      return newTodos;
+    }
+    setTodos(setNewTodos(todos));
+    setfilteredTodos(setNewTodos(filteredTodos));
   }
 
   function resetHandler() {
     setTodos([]);
-    setfilteredTodos([])
+    setfilteredTodos([]);
   }
 
   function tableOfNumberTodo() {
