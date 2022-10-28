@@ -42,8 +42,11 @@ function App() {
     }
   };
 
-  function sortCoursesHandler(key) {
-    filteredTodos.sort((a, b) => (a[key] > b[key] ? 1 : -1));
+  function sortTodosHandler(key) {
+    const newSortTodos = [...todos];
+    newSortTodos.sort((a, b) => (a[key] < b[key] ? 1 : -1));
+    setTodos(newSortTodos);
+    setfilteredTodos(newSortTodos);   
   }
 
   function setComplitedHandler(id) {
@@ -136,7 +139,7 @@ function App() {
       <div>
         <h1>Todo App</h1>
         <TodoForm
-          sortCourses={sortCoursesHandler}
+          sortTodos={sortTodosHandler}
           inputChange={inputChangeHandler}
           addTodo={addTodoHandler}
         />

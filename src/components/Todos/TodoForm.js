@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './TodoForm.module.css';
 
-function TodoForm({ addTodo, searchValue, inputChange, sortCourses }) {
+function TodoForm({ addTodo, searchValue, inputChange, sortTodos }) {
   const [value, setValue] = useState('');
 
   function handleSubmitChange(e) {
@@ -13,14 +13,8 @@ function TodoForm({ addTodo, searchValue, inputChange, sortCourses }) {
   return (
     <div className={styles.todoFormContainer}>
       <div className={styles.buttonsBlock}>
-        <button onClick={() => sortCourses('isCompleted')}>Remove sort</button>
-        <button onClick={() => sortCourses('text')}>Sort by alphabet</button>
-        <button
-          onClick={() => sortCourses('id')}
-          title="ID generates randomly, it is just example button"
-        >
-          Sort by ID
-        </button>
+        <button onClick={() => sortTodos('text')}>Sort by alphabet</button>
+        <button onClick={() => sortTodos('isCompleted')}>Sort by completed</button>
       </div>
       <form onSubmit={(e) => handleSubmitChange(e)}>
         <div className={styles.inputsBlock}>
